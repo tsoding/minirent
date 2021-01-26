@@ -45,5 +45,5 @@ jobs:
         shell: cmd
         # this replaces default PowerShell, which can't fail the build
         run: |
-          cl.exe examples\ls.c
-          ls.exe
+          cl.exe /I\examples examples\ls.c
+          .\ls.exe
