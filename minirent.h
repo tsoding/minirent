@@ -82,9 +82,12 @@ struct dirent *readdir(DIR *dirp)
         dirp->dirent = (struct dirent*)calloc(1, sizeof(struct dirent));
     } else {
         if(!FindNextFile(dirp->hFind, &dirp->data)) {
-            // TODO: readdir should set errno accordingly on FindFirstFile fail
-            // https://docs.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror
-            errno = ENOSYS;
+            if (GetLastError() != ERROR_NO_MORE_FILES) {
+                // TODO: readdir should set errno accordingly on FindFirstFile fail
+                // https://docs.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror
+                errno = ENOSYS;
+            }
+
             return NULL;
         }
     }
