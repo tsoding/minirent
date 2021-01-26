@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/tsoding/minirent/workflows/CI/badge.svg)](https://github.com/tsoding/minirent/actions)
+
 # minirent
 
 A subset of [dirent](https://pubs.opengroup.org/onlinepubs/9699919799/) interface for Windows.
