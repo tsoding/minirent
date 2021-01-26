@@ -2,7 +2,7 @@
 
 # minirent
 
-A subset of [dirent](https://pubs.opengroup.org/onlinepubs/9699919799/) interface for Windows.
+A subset of [dirent](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/dirent.h.html) interface for Windows.
 
 The code that works with minirent must work with the dirent.
 
