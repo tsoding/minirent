@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     errno = 0;
     struct dirent *dp = NULL;
-    while (dp = readdir(dir)) {
+    while ((dp = readdir(dir))) {
         // TODO: the output of ls is not sorted
         printf("%s\n", dp->d_name);
     }

@@ -27,7 +27,7 @@ int main(void)
 
     errno = 0;
     struct dirent *dp = NULL;
-    while (dp = readdir(dir)) {
+    while ((dp = readdir(dir))) {
         printf("%s\n", dp->d_name);
     }
     assert(errno == 0);
