@@ -84,7 +84,7 @@ struct dirent *readdir(DIR *dirp)
         if(!FindNextFile(dirp->hFind, &dirp->data)) {
             // TODO: readdir should set errno accordingly on FindFirstFile fail
             // https://docs.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror
-            errno = ENOSYS
+            errno = ENOSYS;
             return NULL;
         }
     }
