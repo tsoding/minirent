@@ -18,6 +18,18 @@
 // LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+// ============================================================
+//
+// minirent — 0.0.1 — A subset of dirent interface for Windows.
+//
+// https://github.com/tsoding/minirent
+//
+// ============================================================
+//
+// ChangeLog (https://semver.org/ is implied)
+//
+//    0.0.1 First Official Release
 
 #ifndef MINIRENT_H_
 #define MINIRENT_H_
@@ -83,7 +95,7 @@ struct dirent *readdir(DIR *dirp)
     } else {
         if(!FindNextFile(dirp->hFind, &dirp->data)) {
             if (GetLastError() != ERROR_NO_MORE_FILES) {
-                // TODO: readdir should set errno accordingly on FindFirstFile fail
+                // TODO: readdir should set errno accordingly on FindNextFile fail
                 // https://docs.microsoft.com/en-us/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror
                 errno = ENOSYS;
             }
