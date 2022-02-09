@@ -4,12 +4,8 @@
 #include <string.h>
 #include <errno.h>
 
-#ifdef _WIN32
-#    define MINIRENT_IMPLEMENTATION
-#    include <minirent.h>
-#else
-#    include <dirent.h>
-#endif // _WIN32
+#define MINIRENT_IMPLEMENTATION
+#include <minirent.h>
 
 int main(int argc, char *argv[])
 {
