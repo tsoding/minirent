@@ -29,6 +29,8 @@
 //
 // ChangeLog (https://semver.org/ is implied)
 //
+//    0.0.2 Automatically include dirent.h on non-Windows
+//          platforms
 //    0.0.1 First Official Release
 
 #ifndef MINIRENT_H_
