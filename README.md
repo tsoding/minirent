@@ -6,6 +6,8 @@ A subset of [dirent](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/d
 
 The code that works with minirent must work with the dirent.
 
+Use minirent as a cross-platform replacement of dirent if you only need the subset interface.
+
 ## Usage
 
 [minirent.h](./minirent.h) is an [stb-style](https://github.com/nothings/stb/blob/master/docs/stb_howto.txt) header-only library. That means that when you just include it it does not include the implementations of the functions. You have to define `MINIRENT_IMPLEMENTATION` macro:
@@ -15,12 +17,8 @@ The code that works with minirent must work with the dirent.
 #include <stdio.h>
 #include <stdlib.h>
 
-#ifdef _WIN32
-#    define MINIRENT_IMPLEMENTATION
-#    include <minirent.h>
-#else
-#    include <dirent.h>
-#endif // _WIN32
+#define MINIRENT_IMPLEMENTATION
+#include <minirent.h>
 
 int main(void)
 {
