@@ -33,12 +33,12 @@
 //          platforms
 //    0.0.1 First Official Release
 
-#ifndef MINIRENT_H_
-#define MINIRENT_H_
-
 #ifndef _WIN32
 #include <dirent.h>
 #else // _WIN32
+
+#ifndef MINIRENT_H_
+#define MINIRENT_H_
 
 #define WIN32_LEAN_AND_MEAN
 #include "windows.h"
@@ -53,6 +53,8 @@ typedef struct DIR DIR;
 DIR *opendir(const char *dirpath);
 struct dirent *readdir(DIR *dirp);
 int closedir(DIR *dirp);
+
+#endif // MINIRENT_H_
 
 #ifdef MINIRENT_IMPLEMENTATION
 
@@ -139,4 +141,3 @@ int closedir(DIR *dirp)
 
 #endif // MINIRENT_IMPLEMENTATION
 #endif // _WIN32
-#endif // MINIRENT_H_
